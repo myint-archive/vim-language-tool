@@ -40,5 +40,4 @@ Then copy the contents of ``plugin`` into ``~/.vim/plugin``.
 License
 =======
 
-The VIM LICENSE applies to LanguageTool.vim plugin
-(see ":help copyright" except use "LanguageTool.vim" instead of Vim").
+The VIM LICENSE applies to ``LanguageTool.vim`` plugin.
