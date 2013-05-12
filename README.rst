@@ -9,7 +9,7 @@ or http://www.languagetool.org/ or more information about LanguageTool.
 
 The script defines 2 commands:
 
-- Use  :LanguageToolCheck  to check grammar in current buffer.
+- Use ``:LanguageToolCheck`` to check grammar in current buffer.
   This will check for grammar mistakes in text of current buffer
   and highlight the errors. It also opens a new scratch window with the
   list of grammar errors with further explanations for each error.
@@ -18,7 +18,7 @@ The script defines 2 commands:
   So you can use location commands such as :lopen to open the location
   list window, :lne to jump to the next error, etc.
 
-- Use  :LanguageToolClear  to remove highlighting of grammar mistakes,
+- Use ``:LanguageToolClear`` to remove highlighting of grammar mistakes,
   close the scratch window containing the list of errors, clear and
   close the location list.
 
@@ -35,12 +35,6 @@ Installation
     $ pip install git+https://github.com/myint/language-tool
 
 Then copy the contents of ``plugin`` into ``~/.vim/plugin``.
-
-
-Usage
-=====
-
-Call ``:LanguageToolCheck`` to run the grammar check in vim.
 
 
 License
