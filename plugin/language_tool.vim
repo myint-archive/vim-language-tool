@@ -219,22 +219,6 @@ function s:LanguageToolSetUp() "{{{1
       endif
     endif
   endif
-
-  let s:languagetool_jar = exists("g:languagetool_jar")
-  \ ? g:languagetool_jar
-  \ : $HOME . '/languagetool/dist/LanguageTool.jar'
-
-  if !filereadable(s:languagetool_jar)
-    " Hmmm, can't find the jar file.  Try again with expand() in case user
-    " set it up as: let g:languagetool_jar = '$HOME/LanguageTool.jar'
-    let l:languagetool_jar = expand(s:languagetool_jar)
-    if !filereadable(expand(l:languagetool_jar))
-      echomsg "LanguageTool cannot be found at: " . s:languagetool_jar
-      echomsg "You need to install LanguageTool and/or set up g:languagetool_jar"
-      return -1
-    endif
-    let s:languagetool_jar = l:languagetool_jar
-  endif
   return 0
 endfunction
 
@@ -297,8 +281,7 @@ function s:LanguageToolCheck(line1, line2) "{{{1
   let l:range = a:line1 . ',' . a:line2
   silent exe l:range . 'w!' . l:tmpfilename
 
-  let l:languagetool_cmd = 'java'
-  \ . ' -jar '  . s:languagetool_jar
+  let l:languagetool_cmd = 'python -m language_tool'
   \ . ' -c '    . s:languagetool_encoding
   \ . ' -d '    . s:languagetool_disable_rules
   \ . ' -l '    . s:languagetool_lang
