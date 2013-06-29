@@ -24,8 +24,8 @@ The script defines 2 commands:
 
 See screenshots of grammar checking in English and French at:
 
-   - http://dominique.pelle.free.fr/pic/LanguageToolVimPlugin_en.png
-   - http://dominique.pelle.free.fr/pic/LanguageToolVimPlugin_fr.png
+- http://dominique.pelle.free.fr/pic/LanguageToolVimPlugin_en.png
+- http://dominique.pelle.free.fr/pic/LanguageToolVimPlugin_fr.png
 
 
 Installation
