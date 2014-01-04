@@ -364,12 +364,18 @@ function s:LanguageToolCheck(line1, line2) "{{{1
       call append('$', '')
       let l:i += 1
     endfor
-    exe "norm! z" . s:languagetool_win_height . "\<CR>"
-    0
-    map <silent> <buffer> <CR> :call <sid>JumpToCurrentError()<CR>
-    redraw
-    echon 'Press <Enter> on error in scratch buffer to jump its location'
-    exe "norm! \<C-W>\<C-P>"
+
+    if len(s:errors)
+      exe "norm! z" . s:languagetool_win_height . "\<CR>"
+      0
+      map <silent> <buffer> <CR> :call <sid>JumpToCurrentError()<CR>
+      redraw
+      echon 'Press <Enter> on error in scratch buffer to jump its location'
+      exe "norm! \<C-W>\<C-P>"
+    else
+      bd!
+      unlet! s:languagetool_error_buffer
+    endif
   else
     " Negative s:languagetool_win_height -> no scratch window.
     bd!
